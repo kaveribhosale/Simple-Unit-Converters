@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Unit Converters</title>
+
+    <style>
+        body {
+            background-color: #f2f6ff;
+            border-radius: 5px;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            width: 260px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #4a69bd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .clrbutton{
+            padding: 8px 15px;
+            background-color: rgb(247, 229, 229);
+            color:  #4a69bd;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+
+        p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Simple Converter Application</h1>
+
+    <div class="container">
+
+        
+        <div class="card">
+            <h3>Centimeter → Inches</h3>
+            <input type="number" id="cm" placeholder="Enter cm">
+            <button onclick="convertCm()">Convert</button>&nbsp;&nbsp;&nbsp;
+            <button class="clrbutton" onclick="clear()">clear</button>
+            <p id="cmResult"></p>
+        </div>
+
+        
+        <div class="card">
+            <h3>Rupees → Dollars</h3>
+            <input type="number" id="rupees" placeholder="Enter ₹">
+            <button onclick="convertRupees()">Convert</button>&nbsp;&nbsp;&nbsp;
+            <button class="clrbutton" onclick="clear()">clear</button>
+            <p id="rupeesResult"></p>
+        </div>
+
+        
+        <div class="card">
+            <h3>Feet → Inches</h3>
+            <input type="number" id="feet" placeholder="Enter feet">
+            <button onclick="convertFeet()">Convert</button>&nbsp;&nbsp;&nbsp;
+            <button class="clrbutton" onclick="clear()">clear</button>
+            <p id="feetResult"></p>
+        </div>
+
+    </div>
+
+    <script>
+        function convertCm() {
+            let cm = document.getElementById("cm").value;
+            let inches = cm * 0.3937;
+            document.getElementById("cmResult").innerText =
+                cm + " cm = " + inches.toFixed(2) + " inches";
+        }
+
+        function convertRupees() {
+            let rupees = document.getElementById("rupees").value;
+            let dollars = rupees / 83;
+            document.getElementById("rupeesResult").innerText =
+                "₹" + rupees + " = $" + dollars.toFixed(2);
+        }
+
+        function convertFeet() {
+            let feet = document.getElementById("feet").value;
+            let inches = feet * 12;
+            document.getElementById("feetResult").innerText =
+                feet + " feet = " + inches + " inches";
+        }
+    </script>
+
+</body>
+</html>
