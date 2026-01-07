@@ -86,7 +86,7 @@
             <h3>Centimeter → Inches</h3>
             <input type="number" id="cm" placeholder="Enter cm">
             <button onclick="convertCm()">Convert</button>&nbsp;&nbsp;&nbsp;
-            <button class="clrbutton" onclick="clear()">clear</button>
+            <button class="clrbutton" onclick="showMessage(1)">clear</button>
             <p id="cmResult"></p>
         </div>
 
@@ -95,7 +95,7 @@
             <h3>Rupees → Dollars</h3>
             <input type="number" id="rupees" placeholder="Enter ₹">
             <button onclick="convertRupees()">Convert</button>&nbsp;&nbsp;&nbsp;
-            <button class="clrbutton" onclick="clear()">clear</button>
+            <button class="clrbutton" onclick="showMessage(2)">clear</button>
             <p id="rupeesResult"></p>
         </div>
 
@@ -104,7 +104,7 @@
             <h3>Feet → Inches</h3>
             <input type="number" id="feet" placeholder="Enter feet">
             <button onclick="convertFeet()">Convert</button>&nbsp;&nbsp;&nbsp;
-            <button class="clrbutton" onclick="clear()">clear</button>
+            <button class="clrbutton" onclick="showMessage(3)">clear</button>
             <p id="feetResult"></p>
         </div>
 
@@ -131,8 +131,23 @@
             document.getElementById("feetResult").innerText =
                 feet + " feet = " + inches + " inches";
         }
+        function showMessage(i) {
+            if (i == 1) {
+                document.getElementById("cm").value = "";
+                document.getElementById("cmResult").innerText = "";
+            }
+            else if (i == 2) {
+                document.getElementById("rupees").value = "";
+                document.getElementById("rupeesResult").innerText = "";
+            }
+            else {
+                document.getElementById("feet").value = "";
+                document.getElementById("feetResult").innerText = "";
+            }
+        }
     </script>
 
 </body>
 
 </html>
+
